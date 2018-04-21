@@ -8,7 +8,7 @@
 
 #import "NSString+FJExtension.h"
 #import <CommonCrypto/CommonDigest.h>
-
+#import "NSData+FJExtension.h"
 
 @implementation NSString (FJExtension)
 + (NSString *)fj_stringWithBase64EncodedString:(NSString *)string
