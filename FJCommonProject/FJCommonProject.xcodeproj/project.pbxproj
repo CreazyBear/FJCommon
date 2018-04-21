@@ -7,10 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66E79104CA1C43235AF2B6AB /* libPods-FJCommonProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5674EDF5FAA8510681CA0F7 /* libPods-FJCommonProject.a */; };
 		A55500E0208AE51F0097215E /* FJCommonProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A55500D6208AE51E0097215E /* FJCommonProject.framework */; };
 		A55500E5208AE51F0097215E /* FJCommonProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A55500E4208AE51F0097215E /* FJCommonProjectTests.m */; };
 		A55500E7208AE51F0097215E /* FJCommonProject.h in Headers */ = {isa = PBXBuildFile; fileRef = A55500D9208AE51E0097215E /* FJCommonProject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A55500F3208AE5690097215E /* FJCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = A55500F2208AE5690097215E /* FJCommon.h */; };
+		A5550100208AE7DC0097215E /* FJMacroSingleInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = A55500F7208AE7DC0097215E /* FJMacroSingleInstance.h */; };
+		A5550109208AE84C0097215E /* FJMacroCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = A5550108208AE84C0097215E /* FJMacroCommon.h */; };
+		A5550116208AE8EA0097215E /* UIView+FJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A555010A208AE8E90097215E /* UIView+FJExtension.m */; };
+		A5550117208AE8EA0097215E /* NSDate+Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A555010B208AE8E90097215E /* NSDate+Utilities.h */; };
+		A5550118208AE8EA0097215E /* UIImage+FJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A555010C208AE8E90097215E /* UIImage+FJExtension.m */; };
+		A5550119208AE8EA0097215E /* NSString+FJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = A555010D208AE8E90097215E /* NSString+FJExtension.h */; };
+		A555011A208AE8EA0097215E /* NSString+FJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A555010E208AE8E90097215E /* NSString+FJExtension.m */; };
+		A555011B208AE8EA0097215E /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A555010F208AE8E90097215E /* NSDate+Utilities.m */; };
+		A555011C208AE8EA0097215E /* UIColor+FJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = A5550110208AE8E90097215E /* UIColor+FJExtension.h */; };
+		A555011D208AE8EA0097215E /* UIColor+FJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A5550111208AE8E90097215E /* UIColor+FJExtension.m */; };
+		A555011E208AE8EA0097215E /* UIImage+FJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = A5550112208AE8EA0097215E /* UIImage+FJExtension.h */; };
+		A555011F208AE8EA0097215E /* NSData+FJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A5550113208AE8EA0097215E /* NSData+FJExtension.m */; };
+		A5550120208AE8EA0097215E /* NSData+FJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = A5550114208AE8EA0097215E /* NSData+FJExtension.h */; };
+		A5550121208AE8EA0097215E /* UIView+FJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = A5550115208AE8EA0097215E /* UIView+FJExtension.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C859D381EDF9BE41567C464 /* Pods-FJCommonProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FJCommonProject.release.xcconfig"; path = "../../../../Desktop/Project/MyProject/Apple/ObjectiveCAppCollection/Pods/Target Support Files/Pods-FJCommonProject/Pods-FJCommonProject.release.xcconfig"; sourceTree = "<group>"; };
 		A55500D6208AE51E0097215E /* FJCommonProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FJCommonProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55500D9208AE51E0097215E /* FJCommonProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJCommonProject.h; sourceTree = "<group>"; };
 		A55500DA208AE51F0097215E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,6 +47,22 @@
 		A55500E4208AE51F0097215E /* FJCommonProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJCommonProjectTests.m; sourceTree = "<group>"; };
 		A55500E6208AE51F0097215E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A55500F2208AE5690097215E /* FJCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJCommon.h; sourceTree = "<group>"; };
+		A55500F7208AE7DC0097215E /* FJMacroSingleInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJMacroSingleInstance.h; sourceTree = "<group>"; };
+		A5550108208AE84C0097215E /* FJMacroCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJMacroCommon.h; sourceTree = "<group>"; };
+		A555010A208AE8E90097215E /* UIView+FJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FJExtension.m"; sourceTree = "<group>"; };
+		A555010B208AE8E90097215E /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		A555010C208AE8E90097215E /* UIImage+FJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FJExtension.m"; sourceTree = "<group>"; };
+		A555010D208AE8E90097215E /* NSString+FJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FJExtension.h"; sourceTree = "<group>"; };
+		A555010E208AE8E90097215E /* NSString+FJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FJExtension.m"; sourceTree = "<group>"; };
+		A555010F208AE8E90097215E /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		A5550110208AE8E90097215E /* UIColor+FJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FJExtension.h"; sourceTree = "<group>"; };
+		A5550111208AE8E90097215E /* UIColor+FJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FJExtension.m"; sourceTree = "<group>"; };
+		A5550112208AE8EA0097215E /* UIImage+FJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FJExtension.h"; sourceTree = "<group>"; };
+		A5550113208AE8EA0097215E /* NSData+FJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FJExtension.m"; sourceTree = "<group>"; };
+		A5550114208AE8EA0097215E /* NSData+FJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FJExtension.h"; sourceTree = "<group>"; };
+		A5550115208AE8EA0097215E /* UIView+FJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FJExtension.h"; sourceTree = "<group>"; };
+		B5674EDF5FAA8510681CA0F7 /* libPods-FJCommonProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FJCommonProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3E298BDF128342CB790130A /* Pods-FJCommonProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FJCommonProject.debug.xcconfig"; path = "../../../../Desktop/Project/MyProject/Apple/ObjectiveCAppCollection/Pods/Target Support Files/Pods-FJCommonProject/Pods-FJCommonProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66E79104CA1C43235AF2B6AB /* libPods-FJCommonProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +91,8 @@
 				A55500D8208AE51E0097215E /* FJCommonProject */,
 				A55500E3208AE51F0097215E /* FJCommonProjectTests */,
 				A55500D7208AE51E0097215E /* Products */,
+				EA2CE0C24D57CF742C7A2FD8 /* Pods */,
+				D5FDD7539465B0B8F05C8C8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,7 +108,6 @@
 		A55500D8208AE51E0097215E /* FJCommonProject */ = {
 			isa = PBXGroup;
 			children = (
-				A55500F0208AE5680097215E /* Assets */,
 				A55500F1208AE5690097215E /* Classes */,
 				A55500D9208AE51E0097215E /* FJCommonProject.h */,
 				A55500DA208AE51F0097215E /* Info.plist */,
@@ -90,21 +124,60 @@
 			path = FJCommonProjectTests;
 			sourceTree = "<group>";
 		};
-		A55500F0208AE5680097215E /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Assets;
-			path = ../../FJCommon/Assets;
-			sourceTree = "<group>";
-		};
 		A55500F1208AE5690097215E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A5550107208AE7EB0097215E /* Extension */,
+				A5550106208AE7E20097215E /* Macro */,
 				A55500F2208AE5690097215E /* FJCommon.h */,
 			);
 			name = Classes;
 			path = ../../FJCommon/Classes;
+			sourceTree = "<group>";
+		};
+		A5550106208AE7E20097215E /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				A55500F7208AE7DC0097215E /* FJMacroSingleInstance.h */,
+				A5550108208AE84C0097215E /* FJMacroCommon.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		A5550107208AE7EB0097215E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A5550114208AE8EA0097215E /* NSData+FJExtension.h */,
+				A5550113208AE8EA0097215E /* NSData+FJExtension.m */,
+				A555010B208AE8E90097215E /* NSDate+Utilities.h */,
+				A555010F208AE8E90097215E /* NSDate+Utilities.m */,
+				A555010D208AE8E90097215E /* NSString+FJExtension.h */,
+				A555010E208AE8E90097215E /* NSString+FJExtension.m */,
+				A5550110208AE8E90097215E /* UIColor+FJExtension.h */,
+				A5550111208AE8E90097215E /* UIColor+FJExtension.m */,
+				A5550112208AE8EA0097215E /* UIImage+FJExtension.h */,
+				A555010C208AE8E90097215E /* UIImage+FJExtension.m */,
+				A5550115208AE8EA0097215E /* UIView+FJExtension.h */,
+				A555010A208AE8E90097215E /* UIView+FJExtension.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D5FDD7539465B0B8F05C8C8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5674EDF5FAA8510681CA0F7 /* libPods-FJCommonProject.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA2CE0C24D57CF742C7A2FD8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3E298BDF128342CB790130A /* Pods-FJCommonProject.debug.xcconfig */,
+				2C859D381EDF9BE41567C464 /* Pods-FJCommonProject.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,8 +187,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5550119208AE8EA0097215E /* NSString+FJExtension.h in Headers */,
+				A5550121208AE8EA0097215E /* UIView+FJExtension.h in Headers */,
+				A5550109208AE84C0097215E /* FJMacroCommon.h in Headers */,
 				A55500E7208AE51F0097215E /* FJCommonProject.h in Headers */,
+				A5550100208AE7DC0097215E /* FJMacroSingleInstance.h in Headers */,
+				A555011E208AE8EA0097215E /* UIImage+FJExtension.h in Headers */,
+				A5550120208AE8EA0097215E /* NSData+FJExtension.h in Headers */,
 				A55500F3208AE5690097215E /* FJCommon.h in Headers */,
+				A555011C208AE8EA0097215E /* UIColor+FJExtension.h in Headers */,
+				A5550117208AE8EA0097215E /* NSDate+Utilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +207,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A55500EA208AE51F0097215E /* Build configuration list for PBXNativeTarget "FJCommonProject" */;
 			buildPhases = (
+				1B1FE4A5441E581E88C0B956 /* [CP] Check Pods Manifest.lock */,
 				A55500D1208AE51E0097215E /* Sources */,
 				A55500D2208AE51E0097215E /* Frameworks */,
 				A55500D3208AE51E0097215E /* Headers */,
@@ -210,11 +292,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B1FE4A5441E581E88C0B956 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FJCommonProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A55500D1208AE51E0097215E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A555011F208AE8EA0097215E /* NSData+FJExtension.m in Sources */,
+				A5550116208AE8EA0097215E /* UIView+FJExtension.m in Sources */,
+				A555011A208AE8EA0097215E /* NSString+FJExtension.m in Sources */,
+				A555011D208AE8EA0097215E /* UIColor+FJExtension.m in Sources */,
+				A5550118208AE8EA0097215E /* UIImage+FJExtension.m in Sources */,
+				A555011B208AE8EA0097215E /* NSDate+Utilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +464,7 @@
 		};
 		A55500EB208AE51F0097215E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3E298BDF128342CB790130A /* Pods-FJCommonProject.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -381,6 +491,7 @@
 		};
 		A55500EC208AE51F0097215E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C859D381EDF9BE41567C464 /* Pods-FJCommonProject.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;

@@ -32,9 +32,9 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'FJCommon/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'FJCommon' => ['FJCommon/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'FJCommon' => ['FJCommon/Resources/*']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
