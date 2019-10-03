@@ -1,0 +1,27 @@
+{
+  "name": "FJCommon",
+  "version": "0.1.0",
+  "summary": "每个项目都应该有一个common的，因为总有一些代码需要被反复用到",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/WalterCreazyBear/FJCommon",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "waltercreazybear": "597370561@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/WalterCreazyBear/FJCommon.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "FJCommon/Classes/**/*",
+  "resource_bundles": {
+    "FJCommon": [
+      "FJCommon/Resources/*"
+    ]
+  }
+}

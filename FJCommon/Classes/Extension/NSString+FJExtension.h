@@ -6,13 +6,13 @@
 //  Copyright © 2017年 Bear. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 @interface NSString (FJExtension)
 
 /*
  * Returns YES if string nil or empty
  */
-- (BOOL)fj_isEmpty;
-
 - (BOOL)fj_isNilOrEmpty;
 
 /**

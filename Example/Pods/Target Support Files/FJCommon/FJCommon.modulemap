@@ -1,0 +1,6 @@
+framework module FJCommon {
+  umbrella header "FJCommon-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -11,6 +11,18 @@
 #import "NSData+FJExtension.h"
 
 @implementation NSString (FJExtension)
+
+-(BOOL)fj_isEmpty
+{
+    if(!self) return YES;
+    
+    NSCharacterSet *charSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSString *trimmed = [self stringByTrimmingCharactersInSet:charSet];
+    if([trimmed isEqualToString:@""]) return YES;
+    
+    return NO;
+}
+
 + (NSString *)fj_stringWithBase64EncodedString:(NSString *)string
 {
     NSData *data = [NSData fj_dataWithBase64EncodedString:string];
@@ -36,30 +48,6 @@
 - (NSData *)fj_base64DecodedData
 {
     return [NSData fj_dataWithBase64EncodedString:self];
-}
-
-
--(BOOL)fj_isNilOrEmpty
-{
-    NSCharacterSet * emptyCharacterSet = [NSCharacterSet characterSetWithCharactersInString:@" \t\n"];
-    
-    if (!self || [self stringByTrimmingCharactersInSet:emptyCharacterSet].length == 0) {
-        return YES;
-    }
-    else{
-        return NO;
-    }
-}
-
--(BOOL)fj_isEmpty
-{
-    if(!self) return YES;
-    
-    NSCharacterSet *charSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-    NSString *trimmed = [self stringByTrimmingCharactersInSet:charSet];
-    if([trimmed isEqualToString:@""]) return YES;
-    
-    return NO;
 }
 
 - (NSString *)fj_MD5Digest
