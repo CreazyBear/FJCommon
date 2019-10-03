@@ -11,14 +11,14 @@
 #endif
 
 #import "NSData+FJExtension.h"
-#import "NSDate+Utilities.h"
+#import "NSDate+FJUtilities.h"
 #import "NSString+FJExtension.h"
 #import "UIColor+FJExtension.h"
+#import "UIFont+FJExtension.h"
 #import "UIImage+FJExtension.h"
 #import "UIView+FJExtension.h"
 #import "FJCommon.h"
 #import "FJMacroCommon.h"
-#import "FJMacroSingleInstance.h"
 
 FOUNDATION_EXPORT double FJCommonVersionNumber;
 FOUNDATION_EXPORT const unsigned char FJCommonVersionString[];

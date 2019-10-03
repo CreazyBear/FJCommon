@@ -7,17 +7,4 @@ target 'Example' do
 
   # Pods for Example
   pod 'FJCommon', :path=>'../FJCommon.podspec'
-
-  target 'ExampleTests' do
-    inherit! :search_paths
-    # Pods for testing
-    pod 'FJCommon', :path=>'../FJCommon.podspec'
-  end
-
-  target 'ExampleUITests' do
-    inherit! :search_paths
-    # Pods for testing
-    pod 'FJCommon', :path=>'../FJCommon.podspec'
-  end
-
 end

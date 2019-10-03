@@ -11,12 +11,22 @@
 @interface NSData (FJExtension)
 
 + (NSData *)fj_dataWithBase64EncodedString:(NSString *)string;
+
 - (NSString *)fj_base64EncodedStringWithWrapWidth:(NSUInteger)wrapWidth;
+
 - (NSString *)fj_base64EncodedString;
 
-- (BOOL)fj_isGIF;
+#pragma mark - convert
 
-+ (NSString *)fj_contentTypeForImageData:(NSData *)data __deprecated_msg("Use `sd_contentTypeForImageData:`");
+/// 转换成hex格式的string，方法本身没有检验data的字符是否在范围内
+- (NSString*)fj_toHexString;
+
+/// {[MSB], ..., ... ,[LSB]}, 方法本身没有检验data的字符是否在范围内
+- (UInt32)fj_toUInt32;
+
+- (int8_t)fj_toByte;
+
+
 
 
 

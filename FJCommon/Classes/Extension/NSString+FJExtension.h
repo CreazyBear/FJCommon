@@ -46,6 +46,8 @@
 
 - (NSInteger)fj_convertToInt:(NSString*)strtemp;
 
+- (NSData*)fj_convertToHexStyleData;
+
 #pragma mark - Base64
 + (NSString *)fj_stringWithBase64EncodedString:(NSString *)string;
 

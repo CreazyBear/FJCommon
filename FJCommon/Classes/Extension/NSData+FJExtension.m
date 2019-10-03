@@ -18,9 +18,12 @@
     
 #if __MAC_OS_X_VERSION_MIN_REQUIRED < __MAC_10_9 || __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
     
-    if (![NSData instancesRespondToSelector:@selector(initWithBase64EncodedString:options:)])
-    {
-        decoded = [[NSData alloc] initWithBase64EncodedString:[string stringByReplacingOccurrencesOfString:@"[^A-Za-z0-9+/=]" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, [string length])] options:0];
+    if (![NSData instancesRespondToSelector:@selector(initWithBase64EncodedString:options:)]) {
+        NSString * convertStr = [string stringByReplacingOccurrencesOfString:@"[^A-Za-z0-9+/=]"
+                                                                  withString:@""
+                                                                     options:NSRegularExpressionSearch
+                                                                       range:NSMakeRange(0, [string length])];
+        decoded = [[NSData alloc] initWithBase64EncodedString:convertStr options:0];
     }
     else
         
@@ -93,57 +96,44 @@
     return [self fj_base64EncodedStringWithWrapWidth:0];
 }
 
-- (BOOL)fj_isGIF
-{
-    BOOL isGIF = NO;
-    
-    uint8_t c;
-    [self getBytes:&c length:1];
-    
-    switch (c)
-    {
-        case 0x47:  // probably a GIF
-            isGIF = YES;
-            break;
-        default:
-            break;
+- (NSString*)fj_toHexString {
+    if (!self) {
+        return @"";
     }
-    
-    return isGIF;
-}
-
-+ (NSString *)fj_contentTypeForImageData:(NSData *)data {
-    uint8_t c;
-    [data getBytes:&c length:1];
-    switch (c) {
-        case 0xFF:
-            return @"image/jpeg";
-        case 0x89:
-            return @"image/png";
-        case 0x47:
-            return @"image/gif";
-        case 0x49:
-        case 0x4D:
-            return @"image/tiff";
-        case 0x52:
-            // R as RIFF for WEBP
-            if ([data length] < 12) {
-                return nil;
-            }
-            
-            NSString *testString = [[NSString alloc] initWithData:[data subdataWithRange:NSMakeRange(0, 12)] encoding:NSASCIIStringEncoding];
-            if ([testString hasPrefix:@"RIFF"] && [testString hasSuffix:@"WEBP"]) {
-                return @"image/webp";
-            }
-            
-            return nil;
+    Byte * dataByte = (Byte*)self.bytes;
+    NSString * hexString = @"";
+    for (int i = 0 ; i < self.length; i++) {
+        NSString * newHexStr = [NSString stringWithFormat:@"%x",dataByte[i] & 0xff];
+        if (newHexStr.length == 1) {
+            hexString = [NSString stringWithFormat:@"%@0%@",hexString,newHexStr];
+        }
+        else {
+            hexString = [NSString stringWithFormat:@"%@%@",hexString,newHexStr];
+        }
     }
-    return nil;
+    return hexString;
 }
 
-+ (NSString *)contentTypeForImageData:(NSData *)data {
-    return [self fj_contentTypeForImageData:data];
+- (UInt32)fj_toUInt32 {
+    if (!self || self.length == 0) {
+        return 0;
+    }
+    Byte * dataByte = (Byte*)self.bytes;
+    UInt32 convertLong = 0;
+    for (int num = 0; num < self.length; num++) {
+        convertLong = convertLong | dataByte[num]<<(8*(self.length-1-num));
+    }
+    return convertLong;
 }
 
+- (int8_t)fj_toByte {
+    if (self == nil) {
+        return 0;
+    }
+    char val[self.length];
+    [self getBytes:&val length:self.length];
+    int8_t result = val[0];
+    return result;
+}
 
 @end
