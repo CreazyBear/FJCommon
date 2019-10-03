@@ -13,7 +13,7 @@
 /*
  * Returns YES if string nil or empty
  */
-- (BOOL)fj_isNilOrEmpty;
+- (BOOL)fj_isEmpty;
 
 /**
  *  Returns a copy of the receiver with all whitespaced removed from the front and back.
@@ -44,7 +44,7 @@
 
 - (NSString *)fj_MD5Digest;
 
-- (NSInteger)fj_convertToInt:(NSString*)strtemp;
+- (NSInteger)fj_convertLength;
 
 - (NSData*)fj_convertToHexStyleData;
 

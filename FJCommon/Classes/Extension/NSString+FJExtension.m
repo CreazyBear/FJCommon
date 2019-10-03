@@ -121,11 +121,11 @@
 }
 
 //计算NSString字节长度,汉字占2个，英文占1个
-- (NSInteger)fj_convertToInt:(NSString*)strtemp {
+- (NSInteger)fj_convertLength {
     
     int strlength = 0;
-    char* p = (char*)[strtemp cStringUsingEncoding:NSUnicodeStringEncoding];
-    for (int i=0 ; i<[strtemp lengthOfBytesUsingEncoding:NSUnicodeStringEncoding] ;i++) {
+    char* p = (char*)[self cStringUsingEncoding:NSUnicodeStringEncoding];
+    for (int i=0 ; i<[self lengthOfBytesUsingEncoding:NSUnicodeStringEncoding] ;i++) {
         if (*p) {
             p++;
             strlength++;
@@ -276,6 +276,5 @@
     }
     return hexData;
 }
-
 
 @end

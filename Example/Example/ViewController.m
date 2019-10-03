@@ -7,8 +7,6 @@
 //
 
 #import "ViewController.h"
-#import <NSString+FJExtension.h>
-#import <NSData+FJExtension.h>
 
 
 @interface ViewController ()
@@ -19,15 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    NSString * str = @"123456";
-    NSData * data = [str fj_convertToHexStyleData];
-    NSString * convertStr = [data fj_toHexString];
-    NSInteger convertNum = [data fj_toUInt32];
-    
-    NSLog(@"xxxx");
-    
     
 }
 
