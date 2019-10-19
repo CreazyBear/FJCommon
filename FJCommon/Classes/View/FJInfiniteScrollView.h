@@ -28,7 +28,6 @@ typedef NS_ENUM(NSUInteger, FJInfiniteScrollDirection) {
 @end
 
 @interface FJInfiniteScrollViewConfiguration : NSObject
-@property (nonatomic, assign) UIEdgeInsets contentSpacing;
 @property (nonatomic, strong) UIColor *backgroundColor;
 @property (nonatomic, strong) NSArray<UIView*> * pageViews;
 @property (nonatomic, assign) FJInfiniteScrollDirection direction;
@@ -45,7 +44,11 @@ typedef NS_ENUM(NSUInteger, FJInfiniteScrollDirection) {
 - (id)initWithFrame:(CGRect)frame
              config:(FJInfiniteScrollViewConfiguration*)config;
 
+
+/// 如果你调用了这个方法，那在页面退出的时候，也需要调用stop。内部会开启一个计时器
 - (void)startAutoScroll;
+
+-(void)stopAutoScroll;
 
 - (void)scrollToPreviousPage;
 

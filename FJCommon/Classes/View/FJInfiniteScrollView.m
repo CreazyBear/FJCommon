@@ -12,7 +12,6 @@
 +(instancetype)defaultConfig {
     FJInfiniteScrollViewConfiguration * config = [FJInfiniteScrollViewConfiguration new];
     config.backgroundColor = [UIColor whiteColor];
-    config.contentSpacing = UIEdgeInsetsMake(0, 0, 0, 0);
     config.direction = FJInfiniteScrollDirectionFromDownToUp;
 //    config.direction = FJInfiniteScrollDirectionFromLeftToRight;
     config.autoScrollTimeInterval = 4;
@@ -44,6 +43,7 @@
         self.frame = frame;
         self.config = config;
         self.currentIndex = 0;
+        self.backgroundColor = self.config.backgroundColor;
         self.userInteractionEnabled = YES;
         self.clipsToBounds = YES;
         [self configInnerScrollView];
@@ -109,11 +109,7 @@
 
 #pragma mark - getter and setter
 - (void)configInnerScrollView {
-    self.innerScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(self.config.contentSpacing.left,
-                                                                          self.config.contentSpacing.top,
-                                                                          CGRectGetWidth(self.frame) - self.config.contentSpacing.left - self.config.contentSpacing.right,
-                                                                          CGRectGetHeight(self.frame) - self.config.contentSpacing.top - self.config.contentSpacing.bottom)];
-    
+    self.innerScrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
     self.innerScrollView.autoresizingMask = (UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight);
     self.innerScrollView.delegate = self;
     self.innerScrollView.clipsToBounds = NO;
@@ -171,10 +167,6 @@
 
 - (void)configPageViews {
     
-    for (int i = 0; i < self.config.pageViews.count; i++) {
-        UIView *view = [self.config.pageViews objectAtIndex:i];
-        view.tag = i;
-    }
     if (self.config.pageViews.count <= 0) {
         return;
     }
@@ -216,9 +208,8 @@
         }
         self.innerScrollView.contentOffset = CGPointMake(CGRectGetWidth(self.frame) , 0.f);
     }
-
     if(self.config.pageViews.count == 1){
-        self.leftView = [[UIView alloc] initWithFrame:self.innerScrollView.bounds];
+        self.leftView = [[UIView alloc] initWithFrame:self.bounds];
         self.leftView = self.config.pageViews.firstObject;
         UITapGestureRecognizer *singleFingerOne = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                           action:@selector(handleSingleFingerEvent:)];
@@ -228,9 +219,9 @@
         [self.leftView addGestureRecognizer:singleFingerOne];
     }
     else if(self.config.pageViews.count == 2){
-        self.centerView = [[UIView alloc] initWithFrame:self.innerScrollView.bounds];
-        self.rightView = [[UIView alloc] initWithFrame:self.innerScrollView.bounds];
-        self.leftView = [[UIView alloc] initWithFrame:self.innerScrollView.bounds];
+        self.centerView = [[UIView alloc] initWithFrame:self.bounds];
+        self.rightView = [[UIView alloc] initWithFrame:self.bounds];
+        self.leftView = [[UIView alloc] initWithFrame:self.bounds];
         
         [self.leftView addSubview:self.config.pageViews[1]];
         [self.centerView addSubview:self.config.pageViews[0]];
@@ -244,14 +235,14 @@
         [self.centerView addGestureRecognizer:singleFingerOne];
     }
     else {
-        self.centerView = [[UIView alloc] initWithFrame:self.innerScrollView.bounds];
-        self.rightView = [[UIView alloc] initWithFrame:self.innerScrollView.bounds];
-        self.leftView = [[UIView alloc] initWithFrame:self.innerScrollView.bounds];
+        self.centerView = [[UIView alloc] initWithFrame:self.bounds];
+        self.rightView = [[UIView alloc] initWithFrame:self.bounds];
+        self.leftView = [[UIView alloc] initWithFrame:self.bounds];
         
         [self.leftView addSubview: self.config.pageViews.lastObject];
         [self.centerView addSubview: self.config.pageViews[0]];
         [self.rightView addSubview: self.config.pageViews[1]];
-        
+            
         UITapGestureRecognizer *singleFingerOne = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                           action:@selector(handleSingleFingerEvent:)];
         singleFingerOne.numberOfTouchesRequired = 1;
@@ -282,6 +273,7 @@
             self.rightView.center = CGPointMake(self.innerScrollView.frame.size.width*2.5 , self.innerScrollView.center.y);
         }
     }
+
 }
 
 - (void)scrollToDirection:(NSInteger)moveDirection
