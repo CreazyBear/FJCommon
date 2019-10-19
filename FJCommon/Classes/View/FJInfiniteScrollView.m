@@ -336,7 +336,7 @@
     [self.centerView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.rightView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
-    
+    // TODO:BEAR:L 这里的代码可以和上面的创建逻辑抽个方法出来。
     if(self.config.pageViews.count == 2){
         if (self.currentIndex == 0) {
             [self.leftView addSubview:self.config.pageViews[1]];
@@ -374,7 +374,5 @@
     
     [self resumeAnimationTimer];
 }
-
-
 
 @end
