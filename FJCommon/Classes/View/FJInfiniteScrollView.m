@@ -28,9 +28,7 @@
 @property (nonatomic, strong) UIView *rightView;
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, strong) NSTimer *autoScrollTimer;
-
 @property (nonatomic, strong) UIScrollView * innerScrollView;
-
 @end
 
 @implementation FJInfiniteScrollView
@@ -223,9 +221,10 @@
         self.rightView = [[UIView alloc] initWithFrame:self.bounds];
         self.leftView = [[UIView alloc] initWithFrame:self.bounds];
         
+        [self.rightView addSubview:self.config.pageViews[1]];
         [self.leftView addSubview:self.config.pageViews[1]];
         [self.centerView addSubview:self.config.pageViews[0]];
-        [self.rightView addSubview:self.config.pageViews[1].copy];
+        
         
         UITapGestureRecognizer *singleFingerOne = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                           action:@selector(handleSingleFingerEvent:)];
@@ -364,11 +363,11 @@
     if(self.config.pageViews.count == 2){
         if (self.currentIndex == 0) {
             [self.leftView addSubview:self.config.pageViews[1]];
-            [self.rightView addSubview:self.config.pageViews[1].copy];
+            [self.rightView addSubview:self.config.pageViews[1]];
         }
         else {
             [self.leftView addSubview:self.config.pageViews[0]];
-            [self.rightView addSubview:self.config.pageViews[0].copy];
+            [self.rightView addSubview:self.config.pageViews[0]];
         }
         [self.centerView addSubview:self.config.pageViews[self.currentIndex]];
     }

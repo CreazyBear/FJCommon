@@ -33,7 +33,7 @@
     
     CGRect frame = CGRectMake(0, 200, [UIScreen mainScreen].bounds.size.width, 260);
     NSMutableArray *imageViews = [[NSMutableArray alloc] init];
-    for (int i = 1; i <= 1006; ++i) {
+    for (int i = 1; i <= 2; ++i) {
         
         UIImageView *page = [UIImageView new];
         [page sd_setImageWithURL:[NSURL URLWithString:@"https://cdn.pixabay.com/photo/2019/10/07/13/39/cosmos-4532636_1280.jpg"]];
