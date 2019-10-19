@@ -1,16 +1,14 @@
 //
 //  AppDelegate.m
-//  Example
+//  FJExample
 //
-//  Created by 熊伟 on 2019/10/3.
+//  Created by 熊伟 on 2019/10/19.
 //  Copyright © 2019 熊伟. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
 
 @interface AppDelegate ()
-@property (nonatomic, strong) ViewController * viewController;
 
 @end
 
@@ -18,13 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController = [[ViewController alloc] init];
-//    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
-    self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
-
+    // Override point for customization after application launch.
     return YES;
 }
 

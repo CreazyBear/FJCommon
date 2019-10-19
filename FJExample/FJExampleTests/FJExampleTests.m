@@ -1,6 +1,6 @@
 //
-//  ExampleTests.m
-//  ExampleTests
+//  FJExampleTests.m
+//  FJExampleTests
 //
 //  Created by 熊伟 on 2019/10/19.
 //  Copyright © 2019 熊伟. All rights reserved.
@@ -8,13 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-#import "ViewController.h"
-
-@interface ExampleTests : XCTestCase
+@interface FJExampleTests : XCTestCase
 
 @end
 
-@implementation ExampleTests
+@implementation FJExampleTests
 
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,8 +20,6 @@
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
-    
-  
 }
 
 - (void)testExample {

@@ -2,7 +2,7 @@
   "name": "FJCommon",
   "version": "0.1.0",
   "summary": "每个项目都应该有一个common的，因为总有一些代码需要被反复用到",
-  "description": "TODO: Add long description of the pod here.",
+  "description": "Too lazy to write something down.",
   "homepage": "https://github.com/WalterCreazyBear/FJCommon",
   "license": {
     "type": "MIT",
@@ -16,12 +16,42 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "source_files": "FJCommon/Classes/**/*",
   "resource_bundles": {
     "FJCommon": [
       "FJCommon/Resources/*"
     ]
-  }
+  },
+  "default_subspecs": "FJAll",
+  "testspecs": [
+    {
+      "name": "FJTest",
+      "test_type": "unit",
+      "source_files": "FJCommon/FJTest/**/*",
+      "dependencies": {
+        "OCMock": [
+
+        ]
+      }
+    }
+  ],
+  "subspecs": [
+    {
+      "name": "FJExtension",
+      "source_files": "FJCommon/Classes/Extension/**/*"
+    },
+    {
+      "name": "FJMacro",
+      "source_files": "FJCommon/Classes/Macro/**/*"
+    },
+    {
+      "name": "FJView",
+      "source_files": "FJCommon/Classes/View/**/*"
+    },
+    {
+      "name": "FJAll",
+      "source_files": "FJCommon/Classes/**/*"
+    }
+  ]
 }
