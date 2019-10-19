@@ -194,32 +194,18 @@
     
     if (self.config.direction == FJInfiniteScrollDirectionFromDownToUp ||
         self.config.direction == FJInfiniteScrollDirectionFromUpToDown) {
-        if(self.config.pageViews.count == 1){
-            self.innerScrollView.contentSize = self.innerScrollView.frame.size;
-        }
-        else {
-            self.innerScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.frame), 3 * CGRectGetHeight(self.frame));
-        }
+        self.innerScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.frame), 3 * CGRectGetHeight(self.frame));
         self.innerScrollView.contentOffset = CGPointMake(0.f , CGRectGetHeight(self.frame));
     }
     else {
-        if(self.config.pageViews.count == 1){
-            self.innerScrollView.contentSize = self.innerScrollView.frame.size;
-        }
-        else {
-            self.innerScrollView.contentSize = CGSizeMake(3 * CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
-        }
+        self.innerScrollView.contentSize = CGSizeMake(3 * CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
         self.innerScrollView.contentOffset = CGPointMake(CGRectGetWidth(self.frame) , 0.f);
     }
+    
     if(self.config.pageViews.count == 1){
-        self.leftView = [[UIView alloc] initWithFrame:self.bounds];
-        self.leftView = self.config.pageViews.firstObject;
-        UITapGestureRecognizer *singleFingerOne = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                          action:@selector(handleSingleFingerEvent:)];
-        singleFingerOne.numberOfTouchesRequired = 1;
-        singleFingerOne.numberOfTapsRequired = 1;
-        singleFingerOne.delegate = self;
-        [self.leftView addGestureRecognizer:singleFingerOne];
+        self.innerScrollView.scrollEnabled = NO;
+        self.centerView = [[UIView alloc] initWithFrame:self.bounds];
+        [self.centerView addSubview: self.config.pageViews.firstObject];
     }
     else if(self.config.pageViews.count == 2){
         self.centerView = [[UIView alloc] initWithFrame:self.bounds];
@@ -229,14 +215,6 @@
         [self.rightView addSubview:[self copyView:self.config.pageViews[1]]];
         [self.leftView addSubview:self.config.pageViews[1]];
         [self.centerView addSubview:self.config.pageViews[0]];
-        
-        
-        UITapGestureRecognizer *singleFingerOne = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                          action:@selector(handleSingleFingerEvent:)];
-        singleFingerOne.numberOfTouchesRequired = 1;
-        singleFingerOne.numberOfTapsRequired = 1;
-        singleFingerOne.delegate = self;
-        [self.centerView addGestureRecognizer:singleFingerOne];
     }
     else {
         self.centerView = [[UIView alloc] initWithFrame:self.bounds];
@@ -246,37 +224,31 @@
         [self.leftView addSubview: self.config.pageViews.lastObject];
         [self.centerView addSubview: self.config.pageViews[0]];
         [self.rightView addSubview: self.config.pageViews[1]];
-            
-        UITapGestureRecognizer *singleFingerOne = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                          action:@selector(handleSingleFingerEvent:)];
-        singleFingerOne.numberOfTouchesRequired = 1;
-        singleFingerOne.numberOfTapsRequired = 1;
-        singleFingerOne.delegate = self;
-        [self.centerView addGestureRecognizer:singleFingerOne];
     }
+
+    [self.innerScrollView addSubview:self.centerView];
+    [self.innerScrollView addSubview:self.rightView];
+    [self.innerScrollView addSubview:self.leftView];
     
-    if(self.config.pageViews.count == 1){
-        [self.innerScrollView addSubview:self.leftView];
-        self.leftView.center = self.innerScrollView.center;
+    if (self.config.direction == FJInfiniteScrollDirectionFromDownToUp ||
+        self.config.direction == FJInfiniteScrollDirectionFromUpToDown) {
+        
+        self.leftView.center =  CGPointMake(self.innerScrollView.center.x , self.innerScrollView.frame.size.height/2);
+        self.centerView.center = CGPointMake(self.innerScrollView.center.x , self.innerScrollView.frame.size.height*1.5);
+        self.rightView.center = CGPointMake(self.innerScrollView.center.x , self.innerScrollView.frame.size.height*2.5);
     }
     else {
-        [self.innerScrollView addSubview:self.centerView];
-        [self.innerScrollView addSubview:self.rightView];
-        [self.innerScrollView addSubview:self.leftView];
-        
-        if (self.config.direction == FJInfiniteScrollDirectionFromDownToUp ||
-            self.config.direction == FJInfiniteScrollDirectionFromUpToDown) {
-            
-            self.leftView.center =  CGPointMake(self.innerScrollView.center.x , self.innerScrollView.frame.size.height/2);
-            self.centerView.center = CGPointMake(self.innerScrollView.center.x , self.innerScrollView.frame.size.height*1.5);
-            self.rightView.center = CGPointMake(self.innerScrollView.center.x , self.innerScrollView.frame.size.height*2.5);
-        }
-        else {
-            self.leftView.center =  CGPointMake(self.innerScrollView.frame.size.width/2 , self.innerScrollView.center.y);
-            self.centerView.center = CGPointMake(self.innerScrollView.frame.size.width*1.5 , self.innerScrollView.center.y);
-            self.rightView.center = CGPointMake(self.innerScrollView.frame.size.width*2.5 , self.innerScrollView.center.y);
-        }
+        self.leftView.center =  CGPointMake(self.innerScrollView.frame.size.width/2 , self.innerScrollView.center.y);
+        self.centerView.center = CGPointMake(self.innerScrollView.frame.size.width*1.5 , self.innerScrollView.center.y);
+        self.rightView.center = CGPointMake(self.innerScrollView.frame.size.width*2.5 , self.innerScrollView.center.y);
     }
+    
+    UITapGestureRecognizer *singleFingerOne = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                      action:@selector(handleSingleFingerEvent:)];
+    singleFingerOne.numberOfTouchesRequired = 1;
+    singleFingerOne.numberOfTapsRequired = 1;
+    singleFingerOne.delegate = self;
+    [self.centerView addGestureRecognizer:singleFingerOne];
 
 }
 
