@@ -122,6 +122,11 @@
 }
 
 #pragma mark - Private
+-(UIView*)copyView:(UIView*)view {
+    NSData * tempArchive = [NSKeyedArchiver archivedDataWithRootObject:view];
+    return [NSKeyedUnarchiver unarchiveObjectWithData:tempArchive];
+}
+
 - (void)configNotify {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(pauseAnimationTimer)
@@ -221,7 +226,7 @@
         self.rightView = [[UIView alloc] initWithFrame:self.bounds];
         self.leftView = [[UIView alloc] initWithFrame:self.bounds];
         
-        [self.rightView addSubview:self.config.pageViews[1]];
+        [self.rightView addSubview:[self copyView:self.config.pageViews[1]]];
         [self.leftView addSubview:self.config.pageViews[1]];
         [self.centerView addSubview:self.config.pageViews[0]];
         
@@ -363,11 +368,11 @@
     if(self.config.pageViews.count == 2){
         if (self.currentIndex == 0) {
             [self.leftView addSubview:self.config.pageViews[1]];
-            [self.rightView addSubview:self.config.pageViews[1]];
+            [self.rightView addSubview:[self copyView:self.config.pageViews[1]]];
         }
         else {
             [self.leftView addSubview:self.config.pageViews[0]];
-            [self.rightView addSubview:self.config.pageViews[0]];
+            [self.rightView addSubview:[self copyView:self.config.pageViews[0]]];
         }
         [self.centerView addSubview:self.config.pageViews[self.currentIndex]];
     }
@@ -397,6 +402,7 @@
     
     [self resumeAnimationTimer];
 }
+
 
 
 @end
